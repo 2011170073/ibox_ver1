@@ -15,6 +15,15 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('list')" :active="request()->routeIs('list')">
+                        {{ __('全ての投稿を表示') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('create')" :active="request()->routeIs('create')">
+                        {{ __('何か投稿する') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('mylist',['user_id'=>Auth::user()->id])" :active="request()->routeIs('mylist',['user_id'=>Auth::user()->id])">
+                        {{ __('自身の投稿') }}
+                    </x-nav-link>
                 </div>
             </div>
 
