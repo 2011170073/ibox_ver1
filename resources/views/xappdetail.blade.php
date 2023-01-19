@@ -10,10 +10,27 @@
                 <div class="p-6 text-gray-900">
                     <h3>{{$post->title}}</h3>
                     <p>{{$post->body}}</p>
+                    <img src="{{$post->image}}">
+                    <p>呪文：{{$post->spell}}</p>
                     <p>{{$post->user->name}}</p>
                     <p>{{$post->created_at}}</p>
                     <a href="/">戻る</a>
                 </div>
+            </div>
+            <form action="/detail/{{$post->id}}/comment/store" method="POST">
+                @csrf
+                <input type="text" name="comment[body]">
+                <input type="hidden" name="comment[user_id]" value="{{$post->user_id}}" readonly>
+                <input type="hidden" name="comment[post_id]" value="{{$post->id}}" readonly>
+                <button type="submit">コメント</button>
+            </form>
+            <div class="comment_area">
+                <h2>コメント</h2>
+                @foreach($comments as $comment)
+                    <h3>{{$comment->id}}</h3>
+                    <p>{{$comment->user->name}}</p>
+                    <p>{{$comment->body}}</p>
+                @endforeach
             </div>
         </div>
     </div>

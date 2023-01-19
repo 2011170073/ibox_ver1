@@ -8,11 +8,12 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <form action="/create/store" method="POST">
+                    <form action="/create/store" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="text" name="post[title]" placeholder="タイトル">
                         <textarea name="post[body]" placeholder="こんにちは"></textarea>
-                        <input type="text" name="post[image]" placeholder="画像?">
+                        <textarea name="post[spell]" placeholder="background,2d,room, pc,monochrome color, red art, gray scale,window,hand focus など"></textarea>
+                        <input type="file" name="post[image]">
                         <button type="submit">投稿する</button>
                     </form>
                 </div>

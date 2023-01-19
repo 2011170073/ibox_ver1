@@ -5,24 +5,27 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ route('list') }}">
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
                     <x-nav-link :href="route('list')" :active="request()->routeIs('list')">
-                        {{ __('全ての投稿を表示') }}
+                        {{ __('イラスト') }}
                     </x-nav-link>
                     <x-nav-link :href="route('create')" :active="request()->routeIs('create')">
                         {{ __('何か投稿する') }}
                     </x-nav-link>
                     <x-nav-link :href="route('mylist',['user_id'=>Auth::user()->id])" :active="request()->routeIs('mylist',['user_id'=>Auth::user()->id])">
-                        {{ __('自身の投稿') }}
+                        {{ __('プロフィール画面') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('userlist')" :active="request()->routeIs('userlist')">
+                        {{ __('ユーザ一覧') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('mylike')" :active="request()->routeIs('mylike')">
+                        {{ __('いいねした投稿') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -76,8 +79,20 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+            <x-responsive-nav-link :href="route('list')" :active="request()->routeIs('list')">
+                {{ __('全ての投稿を表示') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('create')" :active="request()->routeIs('create')">
+                {{ __('何か投稿する') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('mylist',['user_id'=>Auth::user()->id])" :active="request()->routeIs('mylist',['user_id'=>Auth::user()->id])">
+                {{ __('プロフィール画面') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('userlist')" :active="request()->routeIs('userlist')">
+                {{ __('ユーザ一覧') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('mylike')" :active="request()->routeIs('mylike')">
+                {{ __('いいねした投稿') }}
             </x-responsive-nav-link>
         </div>
 
@@ -90,7 +105,7 @@
 
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
+                    {{ __('Setting') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->

@@ -18,7 +18,7 @@ class commentSeeder extends Seeder
      */
     public function run(){
         DB::table("comments")->insert([
-            ["body"=>"リプライ1","user_id"=>2011170073,"post_id"=>1]
+            ["body"=>"こんにちは","user_id"=>2011170074,"post_id"=>30]
             ]);
     }
 }
