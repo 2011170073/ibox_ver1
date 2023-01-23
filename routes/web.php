@@ -7,6 +7,7 @@ use App\Http\Controllers\FollowController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\CroppieController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -41,6 +42,8 @@ Route::middleware('auth')->group(function () {
     Route::get("/search",[SearchController::class,"post_list_search_view"])->name("list_search");
     #以下、プロフィール画面
     Route::get("/userprofile/{user_id}",[PostController::class,"user_profile_view"])->name("user_profile");
+    Route::post("/useprofile/{user_id}/croppie",[CroppieController::class,"croppie_icon_store"])->name("icon_croppie");
+    Route::post("/useprofile/{user_id}/croppie/edit",[CroppieController::class,"croppie_icon_edit_store"])->name("icon_croppie_edit");
     
     
     Route::get("/detail/{post}",[PostController::class,"post_detail_view"])->name("detail");

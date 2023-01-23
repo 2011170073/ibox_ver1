@@ -15,6 +15,18 @@
                     <p>{{$post->user->name}}</p>
                     <p>{{$post->created_at}}</p>
                     <a href="/">戻る</a>
+                    @if(Auth::user()->is_likeing($post->id))<!-- その投稿をいいねしている場合 -->
+                        <form action="/list/unlike/{{$post->id}}" method="POST">
+                            @csrf
+                            @method("DELETE")
+                            <button type="submit">いいね解除</button>
+                        </form>
+                    @else
+                        <form action="/list/dolike/{{$post->id}}" method="POST">
+                            @csrf
+                            <button type="submit">いいね</button>
+                        </form>
+                    @endif
                 </div>
             </div>
             <form action="/detail/{{$post->id}}/comment/store" method="POST">
@@ -25,9 +37,7 @@
                 <button type="submit">コメント</button>
             </form>
             <div class="comment_area">
-                <h2>コメント</h2>
                 @foreach($comments as $comment)
-                    <h3>{{$comment->id}}</h3>
                     <p>{{$comment->user->name}}</p>
                     <p>{{$comment->body}}</p>
                 @endforeach

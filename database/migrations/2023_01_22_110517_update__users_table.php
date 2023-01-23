@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table("body")->nullable();
+        Schema::table('users', function (Blueprint $table) {
+            $table->string("icon")->nullable(true);
         });
     }
 
@@ -25,7 +25,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function (Blueprint $table) {
+        Schema::table('Users', function (Blueprint $table) {
             //
         });
     }

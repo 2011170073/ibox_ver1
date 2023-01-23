@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Cloudinary;
 
+use Illuminate\Pagination\Paginator;
+
 
 use Illuminate\Support\Facades\Auth;
 
@@ -13,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 class PostController extends Controller{
     public function posts_list_view(post $posts){
         //return view("posts/list")->with(["posts"=>$posts->get()]);
-        return view("xapplist")->with(["posts"=>$posts->latest()->get()]);
+        return view("xapplist")->with(["posts"=>$posts->latest()->paginate(60)]);
 
     }
     
@@ -43,7 +45,7 @@ class PostController extends Controller{
     }
     
     public function post_mylist_view(User $user_id){#xappmylist.blade.phpで指定したuser_idを指定しないといけない
-        return view("xappmylist")->with(["posts"=>$user_id->posts_latest]);#postsはuserモデル.phpのposts()関数の事、指定した$user_idを持つpostsモデルのみを持ってくるように参照している
+        return view("xappmylist")->with(["posts"=>$user_id->posts_latest,"user_id"=>$user_id->id,"user"=>$user_id]);#postsはuserモデル.phpのposts()関数の事、指定した$user_idを持つpostsモデルのみを持ってくるように参照している
     }
     
     public function post_delete_view(post $post){
@@ -93,6 +95,9 @@ class PostController extends Controller{
     public function user_profile_view(User $user_id){
         return view("xappuserprofile")->with(["posts"=>$user_id->posts_latest,"user_id"=>$user_id]);
     }
+    
+    
+    
     
 }
 

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\post;
 use App\Models\User;
 
+use Illuminate\Pagination\Paginator;
+
 class SearchController extends Controller
 {
     public function post_list_search_view(Request $req){
@@ -18,7 +20,7 @@ class SearchController extends Controller
                 ->orwhere("spell","LIKE","%{$keyword}%");
         }
         
-        $posts = $quary->get();
+        $posts = $quary->latest()->paginate(60);
         
         return view("xapplist",compact("posts","keyword"));
     }
