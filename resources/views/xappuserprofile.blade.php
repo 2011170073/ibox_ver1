@@ -1,5 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
+        <link rel="stylesheet" href="{{ asset('/css/userprofile_style.css')  }}">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __("") }}
         </h2>
@@ -19,29 +20,28 @@
                     <button type="submit">フォローする</button>
                 </form>
             @endif
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    <!--投稿一覧-->
-                    @foreach($posts as $post)
-                        <h3>{{$post->title}}</h3>
-                        <p>{{$post->body}}</p>
-                        <img src="{{$post->image}}">
-                        <p>呪文：{{$post->spell}}</p>
-                        <a href="/detail/{{$post->id}}">詳細(body部分を触ると詳細へ飛ぶようにしたい)</a>
-                        @if(Auth::user()->is_likeing($post->id))<!-- その投稿をいいねしている場合 -->
-                            <form action="/list/unlike/{{$post->id}}" method="POST">
+            <div id="id_flex1" class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                @foreach($posts as $post)
+                    <div id="id_flex1_box" class="p-6 text-gray-900">
+                        <a id="id_flex1_a" href="/detail/{{$post->id}}">
+                            <div id=id_flex1_box_box1 style="background-image:url('{{$post->image}}')"></div>
+                        </a>
+                        <div id="id_flex1_box_box2">
+                            @if(Auth::user()->id == $post->user->id)<!--自分の投稿に対して -->
+                                <a href="/mylist/{{$post->user->id}}">{{$post->user->name}}</a>
+                            @else<!--自分以外の投稿に対して-->
+                                <a href="/userprofile/{{$post->user->id}}">{{$post->user->name}}</a>
+                            @endif
+                            <p>{{$post->title}}</p>
+                            <a href="/mylist/edit/{{$post->id}}">編集</a>
+                            <form id="form_{{$post->id}}" action="/delete/{{$post->id}}" method="POST">
                                 @csrf
                                 @method("DELETE")
-                                <button type="submit">いいね解除</button>
+                                <button type="button" onclick="deletePost({{$post->id}})">削除</button>
                             </form>
-                        @else
-                            <form action="/list/dolike/{{$post->id}}" method="POST">
-                                @csrf
-                                <button type="submit">いいね</button>
-                            </form>
-                        @endif
-                    @endforeach
-                </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

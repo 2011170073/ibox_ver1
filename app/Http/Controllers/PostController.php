@@ -19,9 +19,17 @@ class PostController extends Controller{
 
     }
     
+    public function posts_list_view_2(post $posts){
+        return view("xapplist2")->with(["posts"=>$posts->latest()->paginate(40)]);
+    }
+    
     public function post_detail_view(post $post){
         //return view("posts/detail")->with(["post"=>$post]);
         return view("xappdetail")->with(["post"=>$post,"comments"=>$post->comments]);
+    }
+    
+    public function post_detail_view_2(post $post){
+        return view("xappdetail2")->with(["post"=>$post,"comments"=>$post->comments]);
     }
     
     public function post_create_view(post $posts){
@@ -94,6 +102,10 @@ class PostController extends Controller{
     
     public function user_profile_view(User $user_id){
         return view("xappuserprofile")->with(["posts"=>$user_id->posts_latest,"user_id"=>$user_id]);
+    }
+    
+    public function user_profile_view_2(User $user_id){
+        return view("xappuserprofile2")->with(["posts"=>$user_id->posts_latest,"user_id"=>$user_id]);
     }
     
     

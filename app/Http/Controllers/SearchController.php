@@ -24,6 +24,20 @@ class SearchController extends Controller
         
         return view("xapplist",compact("posts","keyword"));
     }
+    public function post_list_search_view_2(Request $req){
+        $keyword = $req["keyword"];
+        
+        $quary = post::query();
+        
+        if(!empty($keyword)){
+            $quary->where("title","LIKE","%{$keyword}%")
+                ->orwhere("spell","LIKE","%{$keyword}%");
+        }
+        
+        $posts = $quary->latest()->paginate(60);
+        
+        return view("xapplist2",compact("posts","keyword"));
+    }
     
     public function user_list_search_view(Request $req){
         $keyword = $req["keyword"];#name=keywordを持つinputの入力情報をgetリクエストで取得
