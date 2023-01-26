@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 
 
 class PostController extends Controller{
-    public function posts_list_view(post $posts){
+    public function posts_list_view(post $posts){#、searchcontrollerのpaginateでペジね～としているため、ここのペジね～とに意味はない
         //return view("posts/list")->with(["posts"=>$posts->get()]);
         return view("xapplist")->with(["posts"=>$posts->latest()->paginate(60)]);
 
@@ -96,8 +96,18 @@ class PostController extends Controller{
         return view("xappuserprofile")->with(["posts"=>$user_id->posts_latest,"user_id"=>$user_id]);
     }
     
+    public function posts_list_view_2(post $posts){
+        return view("xapplist2")->with(["posts"=>$posts->latest()->paginate(40)]);#、searchcontrollerのpaginateでペジね～としているため、ここのペジね～とに意味はない
+    }
     
     
+    public function post_detail_view_2(post $post){
+        return view("xappdetail2")->with(["post"=>$post,"comments"=>$post->comments]);
+    }
+    
+    public function user_profile_view_2(User $user_id){
+        return view("xappuserprofile2")->with(["posts"=>$user_id->posts_latest,"user_id"=>$user_id]);
+    }
     
 }
 

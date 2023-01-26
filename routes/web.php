@@ -25,13 +25,10 @@ use Illuminate\Support\Facades\Auth;
 
 
 
-/*
-Route::get('/', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-*/
-
-Route::get("/",[PostController::class,"post_list_view"])->middleware(["auth","verified"])->name("list");
+Route::get("/list",[PostController::class,"posts_list_view_2"])->name("list_2");
+Route::get("/list/search",[SearchController::class,"post_list_search_view_2"])->name("list_search_2");
+Route::get("/list/detail/{post}",[PostController::class,"post_detail_view_2"])->name("detail_2");
+Route::get("/list/userprofile/{user_id}",[PostController::class,"user_profile_view_2"])->name("user_profile2");
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
