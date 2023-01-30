@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+        .icon_box1{
+           width:100%; 
+           
+           text-align:center;
+            }
+            
+        .icon_box1 img{
+            display:inline-block;
+            width:60%;
+            box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.1);
+        }

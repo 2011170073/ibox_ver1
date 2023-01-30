@@ -1,6 +1,16 @@
+
 <x-guest-layout>
     <!-- Session Status -->
+    <link rel="stylesheet" href="{{ asset('/css/login_style.css')  }}" >
     <x-auth-session-status class="mb-4" :status="session('status')" />
+    
+    <div class="box1">
+         <a href="/register">新規ユーザー登録</a>
+    </div>
+    <div class="box2">
+        <a href="/list">ログインなしで閲覧</a>
+    </div>
+   
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
@@ -44,4 +54,6 @@
             </x-primary-button>
         </div>
     </form>
+    
+
 </x-guest-layout>

@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 
-
+Route::get("/dashboard",[PostController::class,"redirect_home"]);
 
 Route::get("/list",[PostController::class,"posts_list_view_2"])->name("list_2");
 Route::get("/list/search",[SearchController::class,"post_list_search_view_2"])->name("list_search_2");

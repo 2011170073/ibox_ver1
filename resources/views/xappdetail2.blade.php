@@ -15,7 +15,7 @@
                     <p>{{$post->user->name}}</p>
                 </div>
             </div>
-            <div class="comment_area">
+            <div class="comment_box_area">
                 @foreach($comments as $comment)
                     <p>{{$comment->user->name}}</p>
                     <p>{{$comment->body}}</p>

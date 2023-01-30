@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+
+.box1{
+    margin-bottom:60px;
+    width:100%;
+    
+}
+
+.box1_container{
+    margin-left:auto;
+    margin-right:auto;
+    width:100%;
+    background:#ffffff;
+    text-align:center;
+    padding:15px 0;
+}
+
+.box1_container h1{
+    font-size:23px;
+}
+
+.box1_container_img{
+   display: inline-block;
+   width:360px;
+   padding:180px 0;
+   border-radius: 100%;
+   margin-bottom:10px;
+   text-align: center;
+}
+
+
+.box1_container a{
+    text-decoration: underline;
+    color:#66cdaa;
+}
+
+
+.box1_container button{
+    color:#66cdaa;
+    border:1px solid #66cdaa;
+    padding:10px 15px;
+}
+
+

@@ -1,9 +1,20 @@
 <x-app-layout>
     <x-slot name="header">
         <link rel="stylesheet" href="{{ asset('/css/mylist_style.css')  }}" >
+        <link rel="stylesheet" href="{{ asset('/css/icon_style.css')  }}" >
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __("プロフィール") }}
         </h2>
+        <script>
+            if("{{isset(Auth::user()->id)}}" == true){//ログインしている時
+                if("{{Auth::user()->id}}" == "{{$user_id}}"){// urlが「mylist/自身のユーザーid」の時
+                }else{// urlが「mylist/他人のユーザーid」の時
+                    window.location.replace("./{{Auth::user()->id}}");
+                }
+            }else{//ログインしていない時
+                window.location.replace('./');
+            }
+        </script>
     </x-slot>
     <div class="py-12">
         <div id="id_icon_box">

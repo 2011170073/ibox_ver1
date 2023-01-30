@@ -74,3 +74,39 @@
    color:#ffffff;
    padding:5px;
 }
+
+
+.box1{
+   width:100%;
+   text-align: center;
+   margin-bottom:30px;
+}
+
+.box1 h1{
+   font-size:27px;
+   margin-top:10px;
+}
+
+.box1_container{
+   width:100%;
+   margin-left: auto;
+   margin-right: auto;
+   background:#ffffff;
+}
+
+.box1_container_img{
+   display: inline-block;
+   width:360px;
+   padding:180px 0;
+   border-radius: 100%;
+   margin-bottom:10px;
+   text-align: center;
+}
+
+.box1_container button{
+   color:#66cdaa;
+   border:1px solid #66cdaa;
+   padding:10px 15px;
+   margin-bottom:15px;
+}
+

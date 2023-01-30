@@ -12,7 +12,12 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 
 
+
 class PostController extends Controller{
+    public function redirect_home(){
+        return redirect("/");
+    }
+    
     public function posts_list_view(post $posts){#、searchcontrollerのpaginateでペジね～としているため、ここのペジね～とに意味はない
         //return view("posts/list")->with(["posts"=>$posts->get()]);
         return view("xapplist")->with(["posts"=>$posts->latest()->paginate(60)]);

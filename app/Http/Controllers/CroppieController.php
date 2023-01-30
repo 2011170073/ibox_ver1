@@ -11,7 +11,7 @@ class CroppieController extends Controller
 {
     public function croppie_icon_store(Request $req,User $user_id){#user_idはpostリクエストで、自分のユーザー行が入っている
         $input = $req["user"];
-        #dd($user_id->id);
+    
         $image_url = Cloudinary::upload($input["icon"]->getRealPath())->getSecurePath();
         $input["icon"] = $image_url;
         $input += array("name"=>$user_id->name);
