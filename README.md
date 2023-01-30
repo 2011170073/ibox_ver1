@@ -1,66 +1,48 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## endraw:AI
+今話題のNovelAIやMidjourneyなど、AIイラスト生成サイトによって生み出されたイラストを共有する画像共有サービスです。  
+ログインしていない場合は機能が制限(フォローやいいね、画像投稿が出来ないなど)された閲覧ページに飛びます。  
+ログインした場合は全ての機能(フォローやいいね、画像投稿など)を使用できるようになります。  
+- 最新投稿一覧画面
+![最新投稿一覧](https://user-images.githubusercontent.com/116270960/215492319-fde4ebbf-f078-4b4a-8bcc-6b220e51cd41.png)
+- 認証画面
+![ログイン画面](https://user-images.githubusercontent.com/116270960/215492271-7182b7ba-1720-4e65-8d57-397ff589c309.png)
+- 投稿詳細画面
+![投稿詳細](https://user-images.githubusercontent.com/116270960/215492391-3a57809e-12ca-424b-8852-c63f6c06bdaf.png)
+- 画像投稿画面
+![画像投稿](https://user-images.githubusercontent.com/116270960/215492455-8e28c4ef-f456-470f-b569-dfc1ae7d7dd5.png)
+- ユーザー一覧画面
+![ユーザ一覧](https://user-images.githubusercontent.com/116270960/215492566-a2033232-46d8-4974-9da7-5bfc2ce380f3.png)
+- いいねした投稿一覧画面
+![いいねした投稿一覧](https://user-images.githubusercontent.com/116270960/215492661-daab7a43-b782-4923-96a6-eedd78ccfbe8.png)
+- プロフィール画面
+![プロフィール](https://user-images.githubusercontent.com/116270960/215492930-acefa1e9-2c9d-47d6-85f6-7e378c40133b.png)
+- 他ユーザのプロフィール画面
+![他ユーザのプロフィール](https://user-images.githubusercontent.com/116270960/215492981-bdbd4caf-a973-4d13-9b79-b000cafd64a9.png)
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 使用技術
+- 言語:PHP 8.0.26,HTML/CSS,JavaScript
+- フレームワーク:Laravel9.x
+- クラウドサービス:AWS
+- データベース:MariaDB
+- ライブラリ:Laravel Breeze
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 機能一覧
+- Laravel Breezeによるユーザー登録&ログイン機能
+- 制限されたイラスト投稿一覧(ログインしていない場合に表示される機能が制限されたページ)
+- イラスト投稿閲覧(一覧・詳細・特定ユーザーの投稿のみ閲覧)機能
+- イラスト投稿(画像・タイトル・内容・使用した呪文を記述できる)機能
+- いいね機能
+- フォロー機能
+- 投稿&ユーザー検索機能
+- 投稿に対するコメント機能
+- プロフィール画面で、自身のアイコン画像を設定する機能
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
