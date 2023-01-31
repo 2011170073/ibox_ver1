@@ -7,7 +7,7 @@
 - 認証画面
 ![ログイン画面](https://user-images.githubusercontent.com/116270960/215492271-7182b7ba-1720-4e65-8d57-397ff589c309.png)
 - 投稿詳細画面
-![投稿詳細](https://user-images.githubusercontent.com/116270960/215492391-3a57809e-12ca-424b-8852-c63f6c06bdaf.png)
+![プロフィール](https://user-images.githubusercontent.com/116270960/215492930-acefa1e9-2c9d-47d6-85f6-7e378c40133b.png)
 - 画像投稿画面
 ![画像投稿](https://user-images.githubusercontent.com/116270960/215492455-8e28c4ef-f456-470f-b569-dfc1ae7d7dd5.png)
 - ユーザー一覧画面
@@ -15,7 +15,7 @@
 - いいねした投稿一覧画面
 ![いいねした投稿一覧](https://user-images.githubusercontent.com/116270960/215492661-daab7a43-b782-4923-96a6-eedd78ccfbe8.png)
 - プロフィール画面
-![プロフィール](https://user-images.githubusercontent.com/116270960/215492930-acefa1e9-2c9d-47d6-85f6-7e378c40133b.png)
+![投稿詳細](https://user-images.githubusercontent.com/116270960/215492391-3a57809e-12ca-424b-8852-c63f6c06bdaf.png)
 - 他ユーザのプロフィール画面
 ![他ユーザのプロフィール](https://user-images.githubusercontent.com/116270960/215492981-bdbd4caf-a973-4d13-9b79-b000cafd64a9.png)
 
